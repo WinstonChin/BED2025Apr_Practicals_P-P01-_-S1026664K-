@@ -1,0 +1,6 @@
+I learnt about how REST APIs communicate with other systems using HTTP methods. 
+Through try and error I managed to understand how each of the HTTP work
+Yes, as I did not know the exact phrase or line to type making minor mistakes like additional of {} when doing the update with the id which cause the code to fail
+
+We use POST for creating as it comes with an id that we can use later to update with PUT
+404 Not Found should be returned when an error occurs 

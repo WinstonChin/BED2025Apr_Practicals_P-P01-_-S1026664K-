@@ -1,0 +1,14 @@
+app.use(express.json()) - Allows the server to understand and extract data in JSON format
+
+req.body - Holds the data sent by the client in the body of an HTTP request
+
+req.query - It is paired with the string part of the URL to specify or filter searching 
+
+req.params.id - Identify specific resources using ID as a unique 
+
+GET - Reads data
+POST - Creates data
+PUT - Updates data
+DELETE - Deletes data
+
+Each HTTP method maps directly to a CRUD operation making data management easy
