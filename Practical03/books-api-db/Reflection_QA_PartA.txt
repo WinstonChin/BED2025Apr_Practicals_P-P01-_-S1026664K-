@@ -1,0 +1,5 @@
+1. It was easier to understand it on sql as compared to the web
+
+2. It was easier to debug as the code was more organised so i could isolate the issue
+
+3. Setting up the MSSQL server for the first time .
