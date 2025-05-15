@@ -1,9 +1,0 @@
-1 The main changes were splitting them into the 3 different sections, (models, controllers and middlerwares) Model contains database related such as the SQL queries. Controller contains the request and response handling. Middleware contains validation to ensure that the user inputs are clean
-2 Challenges faced was making sure the code didnt error after moving them
-3 The MVC made code more organised as opposed to dumping all the code into app.js
-4 Mvc is more organised as the code are seperated according to their purpose making debugging easier
-5 Allocating code in their respective plays such as model and controller meant that the files can be reused in other areas and also improves readability in the event of debugging
-
-1 By implementing input validation middleware ensures that only safe code can reach the database
-2 It treats the input as a plain value instead of excuting the command
-3 Brute force atatck. Limit the number of attacks allowed per minute
