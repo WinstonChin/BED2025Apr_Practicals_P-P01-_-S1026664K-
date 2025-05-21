@@ -1,0 +1,49 @@
+/* main.css */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+#studentsList,
+#message {
+  margin-top: 20px;
+}
+
+.student-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.student-item h3 {
+  margin-top: 0;
+}
+
+.student-item button {
+  margin-right: 5px;
+}
+
+#message {
+  font-weight: bold;
+}
+
+form {
+  max-width: 400px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  margin-top: 15px;
+}
