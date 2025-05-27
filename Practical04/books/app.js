@@ -6,6 +6,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const bookController = require("./controllers/bookController");
+const userController = require("./controllers/userController"); // <-- Import userController
+
 const {
   validateBook,
   validateBookId,
@@ -20,6 +22,9 @@ app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 // --- Add other general middleware here (e.g., logging, security headers) ---
 
+// --- Serve static files from the 'public' directory ---
+// When a request comes in for a static file (like /index.html, /styles.css, /script.js),
+// Express will look for it in the 'public' folder relative to the project root.
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes for books
@@ -27,7 +32,19 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/books", bookController.getAllBooks);
 app.get("/books/:id", validateBookId, bookController.getBookById); // Use validateBookId middleware
 app.post("/books", validateBook, bookController.createBook); // Use validateBook middleware
-// Add routes for PUT/DELETE if implemented, applying appropriate middleware
+app.put("/books/:id", validateBookId, validateBook, bookController.updateBook); // Update book by ID
+app.delete("/books/:id", validateBookId, bookController.deleteBook); // Delete book by ID
+
+// Routes for users
+app.post("/users", userController.createUser);         // Create user
+app.get("/users", userController.getAllUsers);          // Get all users
+app.get("/users/search", userController.searchUsers);   // Search users by query param
+// ... existing Users routes ...
+app.get("/users/with-books", userController.getUsersWithBooks);
+app.get("/users/:id", userController.getUserById);      // Get user by ID
+app.put("/users/:id", userController.updateUser);       // Update user by ID
+app.delete("/users/:id", userController.deleteUser);    // Delete user by ID
+
 
 // Start server
 app.listen(port, () => {
